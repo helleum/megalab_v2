@@ -1,0 +1,8 @@
+<!--[form:system_parameter]-->
+<label for="system_parameter_name">Name</label><%= text_field 'system_parameter', 'name'  %><br/>
+<label for="system_parameter_is_public">Public Editable?</label><%= check_box 'system_parameter', :is_public %><br/>
+<label for="system_parameter_description">Description</label><%= text_field 'system_parameter', 'description'  %><br/>
+<label for="system_parameter_is_string">Value is String?</label><%= check_box 'system_parameter', :is_string %><br/>
+<label for="system_parameter_value">Value</label><%= text_field 'system_parameter', 'value'  %><br/>
+<!--[eoform:system_parameter]-->
+

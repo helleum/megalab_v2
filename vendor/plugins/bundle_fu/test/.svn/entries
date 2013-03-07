@@ -1,0 +1,70 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/bundle_fu/test
+svn://berkeley/ums
+
+
+
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+test_helper.rb
+file
+
+
+
+
+2007-12-14T02:52:18.509482Z
+e07f742b84296a97e86f20e6d9d0901d
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+functional
+dir
+
+mock_view.rb
+file
+
+
+
+
+2007-12-14T02:52:18.525114Z
+c2ea7c4cb136984f654a21ad9ab1aadb
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+fixtures
+dir
+
+run_all.rb
+file
+
+
+
+
+2007-12-14T02:52:18.525114Z
+551216369e2efd8c0ba0262cd54e1f08
+2007-12-04T01:34:54.954671Z
+1
+isaac
+

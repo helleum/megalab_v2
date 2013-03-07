@@ -1,0 +1,62 @@
+<%= render :partial => 'shared/megalab_nav', 
+           :locals => { :title => @seat.class.to_s.titleize, 
+						:name => @seat.display_name,
+						:action => nil } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <h1>Seat Information</h1>
+    <div class="cssshow">
+      <table>
+        <tr><td class="desc">Display Name</td><td><%=h @seat.display_name %></td></tr>
+        <tr><td class="desc">Display Order</td><td><%=h @seat.display_order %></td></tr>
+		<% unless @seat.user.nil? %>
+        <tr><td class="desc">User Full Name</td><td><%=h @seat.user.full_name %></td></tr>		
+        <tr><td class="desc">Duration (Min)</td><td><%=h @seat.duration/1.minute %></td></tr>		
+        <tr><td class="desc">Time Assigned</td><td><%= fmt_datetime(@seat.estimate_time_in) %></td></tr>		
+		<% end %>
+        <tr><td class="desc">Remark</td><td><%=h @seat.remark %></td></tr>
+        <tr><td class="desc">Status</td><td><%=h @seat.status? %></td></tr>
+        <tr><td class="desc">Condition</td><td><%=h @seat.condition? %></td></tr>
+        <tr><td class="desc">Created by</td><td><%=h @seat.created_by.login_name.titleize %></td></tr>
+        <tr><td class="desc">Created at</td><td><%= fmt_datetime(@seat.created_at) %></td></tr>
+        <tr><td class="desc">Updated By</td><td><%= h @seat.updated_by.login_name.titleize %></td></tr>
+        <tr><td class="desc">Updated At</td><td><%= fmt_datetime(@seat.updated_at) %></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Actions", "#"  %>
+      <ul>
+          <li><%= link_to 'Edit', :action => 'edit', :id => @seat %></li>
+          <li><%= link_to 'Change Condition', :action => 'change_condition', :id => @seat %></li>
+          <li><%= link_to 'Condition History', :action => 'condition_history', :id => @seat unless @seat.seat_condition_histories.empty? %></li>
+          <li><%= link_to 'Delete', { :action => 'destroy', :id => @seat }, :confirm => 'Are you sure?', :method => :post %></li>
+          <li><%= link_to 'Back', :action => 'index' %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>
+
+

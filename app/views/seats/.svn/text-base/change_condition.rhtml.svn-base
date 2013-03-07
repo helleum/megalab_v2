@@ -1,0 +1,51 @@
+<%= render :partial => 'shared/megalab_nav', 
+           :locals => { :title => @seat.class.to_s.titleize, 
+						:name => @seat.display_name, 
+						:action => params[:action].titleize } %>
+
+<div class="container">
+  <%= error_messages_for 'seat_condition_history' %>
+  
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+  
+  <% form_tag :action => 'change_condition', :id => @seat do %>
+  <div class="container_div">
+    <h1>Change Condition</h1>
+    <div class="csslisting">    
+      <div class="form_text_box">
+        <p>Seat condition change requested to <b><%= select("seat", "condition", @seat.condition_select_stripped) %></b></p><br/>
+	    <p><label for="seat_condition_history_action_remark"><b>Action remark</b></label><br/>
+	    <%= text_area 'seat_condition_history', 'action_remark', "cols" => 40, "rows" => 6 %></p>
+	  </div>
+    </div>
+  </div>
+  <br/>
+    <%= submit_tag 'Save' %> 
+  <% end %>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Action", "#"  %>
+      <ul>
+        <li><%= link_to 'Back', :action => 'show', :id=> @seat %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>
+  

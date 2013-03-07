@@ -1,0 +1,68 @@
+<%= render :partial => 'shared/megalab_nav', 
+           :locals => { :title => 'Seats', 
+		   				:name => nil, :action => nil } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <div class="button_div">
+      <%= style_link_to_buttons link_to_function('Search', "Effect.toggle('search_list','blind')") %>
+      <%= style_link_to_buttons link_to_original('New Seat', :action => 'new') if @can_create %>
+	  <%= style_link_to_buttons link_to_original('Change Seat Condition', :action => 'update_multiple_seats_condition')%>
+      <%= style_link_to_buttons link_to_original('User Seat Assignment History', :action => 'user_seat_history') %>
+    </div>
+    <h1>Seat</h1>
+    <div class="spacer">&nbsp;</div>
+	<div id="search_list"<% unless params[:search] %> style="display: none"<% end -%>>
+	  <div class="container_div">
+		<div class="cssform">
+    		<% form_tag({:action => 'index'}, {:method => :get}) do %>
+				<label for="display_name">Display Name</label><%= text_field_tag 'display_name', params[:display_name] %><br/>
+				<label for="user_name">User Assigned</label><%= text_field_tag 'user_name', params[:user_name] %><br/>
+				<label for="full_name">User Full Name</label><%= text_field_tag 'full_name', params[:full_name] %><br/>
+				<label for="duration">Duration (Min)</label><%= text_field_tag 'duration', params[:duration] %><br/>
+				<label for="status">Status</label><%= select_tag 'status', options_for_select([["All",""]] + Seat.status_select, params[:status]) %><br/>
+				<label for="condition">Condition</label><%= select_tag 'condition', options_for_select([["All",""]] + Seat.condition_select, params[:condition]) %><br/>
+				<%= hidden_field_tag 'search', 1 %>
+				<%= submit_tag "Find", :name => nil %>&nbsp;<%= button_to_link 'Reset', :action => 'index', :params => { :search => 1 } %>
+			<% end %>
+		</div>
+	  </div>
+	</div>
+	<% if @seats.size > 0 %>
+    <div class="csslisting">
+      <table cellpadding="5" cellspacing="0">
+        <tr> 
+          <th>Actions</th>
+          <th><%=s :display_name, :default => true %></th>
+          <th><%=s :user_name, :label => 'User Assigned' %></th>
+          <th><%=s :full_name, :label => 'User Full Name' %></th>
+          <th><%=s :duration, :label => 'Duration (Min)' %></th>
+          <th><%=s :status %></th>
+          <th><%=s :st_condition, :label => 'Condition' %></th>
+        </tr>
+        <% for seat in @seats %>
+        <tr valign="top">
+          <td><%= icon_to(show_img, :action => 'show', :id => seat) %></td>
+    	  <td align="left"><%= seat.display_name %></td> 
+    	  <td align="left"><%= check_blank(seat.user_name) %></td> 
+    	  <td align="left"><%= check_blank(seat.full_name) %></td> 
+    	  <td align="left"><%= seat.duration/1.minute rescue nil %></td> 
+    	  <td align="left"><%= seat.status_name %></td>
+    	  <td align="left"><%= seat.st_condition_name %></td>
+    	</tr> 
+        <% end %> 
+      </table> 
+	  <%= render :partial => 'shared/records', :object => @seats %>
+    </div>
+	<% end %>
+  </div>
+  <%= will_paginate @seats %>
+</div>
+

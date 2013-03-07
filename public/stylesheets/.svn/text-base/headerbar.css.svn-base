@@ -1,0 +1,20 @@
+.headerbar
+{
+    background: #e2f4fd;
+    font-size: 12px;
+    color: #0f556a;
+    padding: 4px 10px;
+    height: 15px;
+}
+
+.headerbar .left
+{
+    background: #e2f4fd;
+    float: left;
+}
+
+.headerbar .right
+{
+    background: #e2f4fd;
+    float: right;
+}

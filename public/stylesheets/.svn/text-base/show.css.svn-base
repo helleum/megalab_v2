@@ -1,0 +1,32 @@
+.cssshow
+{
+    background: #ffffff;
+}
+
+.cssshow table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    
+}
+
+.cssshow table tr td
+{
+    padding: 5px 10px;
+    border: 1px solid #dae0e2;
+}
+
+.desc
+{
+    font-weight: bold;
+    color: #0f556a;
+    width: 180px;
+}
+
+.content
+{
+    width: 100%;
+}
+    
+

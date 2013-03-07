@@ -1,0 +1,35 @@
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li>
+      <%= link_to "Megalab Management", "#"  %>
+      <ul>
+        <li><%= link_to "Help Requests List", :controller => "help_requests" %></li>
+        <li><%= link_to "Equipment List", :controller => "equipment" %></li>
+        <li><%= link_to "Seats List", :controller => "seats" %></li>
+        <li><%= link_to "Reports", :controller => "reports" %></li>
+      </ul>
+    </li>
+
+	<% if current_user.has_permission?('users', 'index') or current_user.has_permission?('groups', 'index') or current_user.has_role?("Root") -%>
+    <li>
+      <%= link_to "User Management", "#" %>
+      <ul>
+        <li><%= link_to "Users List", :controller => 'users' %></li>
+        <li><%= link_to "Groups List", :controller => 'groups' %></li>
+        <% if current_user.has_role?("Root") -%>
+          <li><%= link_to "Roles List", roles_path %></li>
+          <li><%= link_to "Permissions List", permissions_path %></li>
+        <% end -%>
+      </ul>
+    </li>
+	<% end -%>
+  </ul>
+</div>

@@ -1,0 +1,44 @@
+<%= render :partial => 'shared/user_nav', 
+           :locals => { :title => @user.class.to_s.titleize, 
+						:action => params[:action].titleize, :name => nil } %>
+
+<div class="container">
+  <%= error_messages_for :user %>
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+  
+  <% form_for :user, :url => users_path do |f| -%>
+    <div class="container_div">
+      <h1>New User</h1>
+      <div class="cssform">
+        <%= render_partial 'form', :object => f %>
+        <br/>
+        <%= submit_tag 'Create' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Action", "#"  %>
+      <ul>
+        <li><%= link_to 'Back', :action => 'index' %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>

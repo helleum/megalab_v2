@@ -1,0 +1,43 @@
+<%= render :partial => '/shared/user_nav', 
+           :locals => { :title =>  'Groups', 
+		   :name => nil, :action => nil  } %>
+
+  
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <div class="button_div">
+      <%= style_link_to_buttons link_to_original('New Group', :action => 'new') if @can_create %>
+    </div>
+    <h1>Group</h1>
+    <div class="spacer"></div>
+    <div class="csslisting">
+      <table cellpadding="5" cellspacing="0">
+        <tr> 
+          <th>Actions</th>
+          <th>Groups</th>
+		  <th>Delete</th>
+        </tr>
+        <% for group in @groups %> 
+        <tr valign="top">
+          <td>
+            <%= link_to_original(image_tag(edit_img, :border => 0, :align => "top", :title => fmt_icon_title(edit_img)), :action => :edit, :id => group) if @can_edit %>
+           </td>
+    	  <td><%=h group.title %></td>
+		  <td>  <%= link_to_original(image_tag(delete_img, :border => 0, :align => "top", :title => fmt_icon_title(delete_img)), { :action => :destroy, :id => group }, :confirm => 'Are you sure want to delete this group?', :method => :delete ) if @can_del %></td>
+    	</tr> 
+        <% end %> 
+      </table> 
+	  <div class="no_record">
+	  	Displaying <b><%= @groups.size %></b> records
+	  </div>
+    </div>
+  </div>
+</div>

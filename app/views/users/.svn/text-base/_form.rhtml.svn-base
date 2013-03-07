@@ -1,0 +1,40 @@
+<!--[form:user]-->
+
+<label for="user_login_name">Login Name*</label><%= (@user.id.nil? or current_user.has_role?("Administrator", "Root")) ? text_field('user', :login_name) : @user.login_name %><br/>
+<label for="user_crypted_password">Password*</label><%= password_field 'user', :password %><br/>
+<% unless @user.id.nil? %>
+
+<label>&nbsp;</label><small>Leave password fields empty if you're not changing your password</small><br/>
+<% end %>
+<label for="user_password_confirmation">Confirm*</label><%= password_field 'user', :password_confirmation %><br/>
+<% unless @user.superadmin? %>
+
+<label for="user_nature">Nature</label><select id="user_nature" name="user[nature]">
+											<option value="1" >Vendor</option>
+											<option value="2" selected="selected">Student</option>
+											<option value="3">Staff</option>
+											<option value="4">Other</option>
+										</select><br/>
+
+<label for="user_status">Status</label><%= select "user", "status", User.status_select %><br/>
+<label>Groups</label><select id="user_groups" name="user[groups][]"><option value="">None</option>
+<% for group in Group.filtered_list %>
+  <%= result = "<option value=\"#{group.id}\" selected=\"selected\">" if @user.groups.include? group
+      result = "<option value=\"#{group.id}\">" unless @user.groups.include? group
+      result += "#{group.title}</option>"
+      result -%>
+<% end %>
+</select>
+<br/>
+<% end %>
+<hr />
+<label for="user_display_name">Display Name*</label><%= text_field 'user', 'display_name' %><br/>
+<label for="user_full_name">Full Name</label><%= text_field 'user', 'full_name' %><br/>
+<label for="user_mycard_no">Mycard No</label><%= text_field 'user', 'mycard_no' %><br/>
+<label for="user_passport_no">Passport No</label><%= text_field 'user', 'passport_no' %><br/>
+<label for="user_idcard_no1">ID Card No 1</label><%= text_field 'user', 'idcard_no1' %><br/>
+<label for="user_idcard_no2">ID Card No 2</label><%= text_field 'user', 'idcard_no2' %><br/>
+<label for="user_description">Description</label><%= text_area 'user', 'description',"cols"=>40, "rows"=>6 %><br/>
+<label for="user_remark">Remark:</label><%= text_area 'user', 'remark',"cols"=>40, "rows"=>6 %><br/>
+
+<!--[eoform:user]-->

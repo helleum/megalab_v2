@@ -1,0 +1,23 @@
+    <div class="csslisting">
+      <table cellpadding="5" cellspacing="0">
+        <tr> 
+          <th>Actions</th>
+          <th><%=s :serial_no, :default => true %></th>
+          <th><%=s :display_name, :label => 'Seat No' %></th>
+          <th><%=s :eq_condition_name, :label => 'Condition' %></th>
+          <th><%=s :hardware_address %></th>
+          <th><%=s :description %></th>
+        </tr>
+        <% for equipment in @equipment %>
+        <tr valign="top">
+          <td><%= icon_to(show_img, :action => 'show', :id => equipment) %></td>
+    	  <td align="left"><%=h equipment.serial_no %></td>
+    	  <td align="left"><%= check_blank(equipment.display_name) %></td>
+    	  <td align="left"><%=h equipment.eq_condition_name %></td>
+    	  <td align="left"><%=h equipment.hardware_address %></td>
+    	  <td align="left"><%=h truncate(equipment.description, 40) %></td>
+    	</tr> 
+        <% end %> 
+      </table> 
+	  <%= render :partial => 'shared/records', :object => @equipment %>
+    </div>

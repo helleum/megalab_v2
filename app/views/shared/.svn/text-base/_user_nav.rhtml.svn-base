@@ -1,0 +1,7 @@
+<% content_for :title do %>
+  <%= title %> <% unless name.blank? %> - <%= name %><% end %><% unless action.blank? %> - <%= action %><% end %>
+<% end %>
+
+<% content_for :navigation do %>
+  User Management > <%= title %> <% unless name.blank? %> > <%= name %><% end %><% unless action.blank? %> > <%= action %><% end %>
+<% end %>

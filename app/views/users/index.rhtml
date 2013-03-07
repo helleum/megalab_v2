@@ -1,0 +1,65 @@
+<%= render :partial => '/shared/user_nav', 
+           :locals => { :title =>  'Users', 
+		   :name => nil, :action => nil  } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <div class="button_div">
+      <%= style_link_to_buttons link_to_function('Search', "Effect.toggle('search_list','blind')") %>
+      <%= style_link_to_buttons link_to("New User", :action =>'new') if @can_create %>
+    </div>
+    <h1>User</h1>
+    <div class="spacer">&nbsp;</div>
+	<div id="search_list"<% unless params[:search] %> style="display: none"<% end -%>>
+	  <div class="container_div">
+		<div class="cssform">
+    		<% form_tag({:action => 'index'}, {:method => :get}) do %>
+				<label for="login_name">Login Name</label><%= text_field_tag 'login_name', params[:login_name] %><br/>
+				<label for="full_name">Full name</label><%= text_field_tag 'full_name', params[:full_name] %><br/>
+				<label for="nature">Nature</label><%= select_tag 'nature', options_for_select([["All",""]] + User.nature_select, params[:nature]) %><br/>
+				<label for="status">Status</label><%= select_tag 'status', options_for_select([["All",""]] + User.status_select, params[:status]) %><br/>
+				<label for="date_from">Verification Range</label><%= calendar_date_select_tag "date_from", params[:date_from], :time => false, :popup => "force", :year_range => 5.years.ago..0.years.from_now %>  to  <%= calendar_date_select_tag "date_to", params[:date_to], :time => false, :popup => "force", :year_range => 5.years.ago..0.years.from_now %> (Optional)<br/>
+				<label for="ml_status">ML Access Status</label><%= select_tag 'ml_status', options_for_select([["All",""]] + User.access_select, params[:ml_status]) %><br/>
+				<%= hidden_field_tag 'search', 1 %>
+				<%= submit_tag "Find", :name => nil %>&nbsp;<%= button_to_link 'Reset', :action => 'index', :params => { :search => 1 } %>
+			<% end %>
+		</div>
+	  </div>
+	</div>
+	<% if @users.size > 0 %>
+    <div class="csslisting">
+      <table cellpadding="5" cellspacing="0">
+        <tr> 
+          <th>Actions</th>
+          <th><%=s :login_name, :default => true %></th>
+          <th><%=s :full_name %></th>
+		  <th><%=s :nature %></th>
+		  <th><%=s :status %></th>
+		  <th><%=s :verification_time %></th>
+		  <th><%=s :ml_access_status, :label => 'ML Access Status' %></th>
+        </tr>
+        <% for user in @users %> 
+        <tr valign="top">
+          <td><%= icon_to(show_img, :action => :show, :id => user) %></td>
+    	  <td><%=h user.login_name %></td>
+          <td><%=h user.full_name %></td> 
+          <td><%=h user.nature_name %></td>
+	      <td><%=h user.status_name %></td>
+		  <td><%= fmt_datetime(user.verification_time) rescue "&nbsp;" %></td>
+		  <td><%=h user.access_name %></td>
+    	</tr> 
+        <% end %> 
+      </table> 
+	  <%= render :partial => 'shared/records', :object => @users %>
+    </div>
+	<% end %>
+  </div>
+  <%= will_paginate @users %>
+</div>

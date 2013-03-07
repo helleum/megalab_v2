@@ -1,0 +1,38 @@
+<%= render :partial => 'shared/megalab_nav', 
+           :locals => { :title => 'Equipment', 
+		   :name => nil, :action => nil  } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+ 
+  <div class="container_div">
+    <div class="button_div">
+      <%= style_link_to_buttons link_to_function('Search', "Effect.toggle('search_list','blind')") %>
+      <%= style_link_to_buttons link_to_original('New Equipment', :action => 'new') if @can_create %>
+    </div>
+    <h1>Equipment</h1>
+    <div class="spacer">&nbsp;</div>
+	<div id="search_list"<% unless params[:search] %> style="display: none"<% end -%>>
+	  <div class="container_div">
+		<div class="cssform">
+    		<% form_tag({:action => 'index'}, {:method => :get}) do %>
+				<label for="serial_no">Serial No</label><%= text_field_tag 'serial_no', params[:serial_no] %><br/>
+				<label for="seat_no">Seat No</label><%= text_field_tag 'seat_no', params[:seat_no] %><br/>
+				<label for="condition">Condition</label><%= select_tag 'condition', options_for_select([["All",""]] + Equipment.condition_select, params[:condition]) %><br/>
+				<label for="hardware_address">Hardware address</label><%= text_field_tag 'hardware_address', params[:hardware_address] %><br/>
+				<label for="description">Description</label><%= text_field_tag 'description', params[:description] %><br/>
+				<%= hidden_field_tag 'search', 1 %>
+				<%= submit_tag "Find", :name => nil %>&nbsp;<%= button_to_link 'Reset', :action => 'index', :params => { :search => 1 } %>
+			<% end %>
+		</div>
+	  </div>
+	</div>
+    <%= render :partial => 'table_data', :object => @equipment if @equipment.size > 0 %>
+  </div>
+  <%= will_paginate @equipment %>
+</div>

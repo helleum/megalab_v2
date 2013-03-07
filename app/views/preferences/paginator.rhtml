@@ -1,0 +1,44 @@
+<%= render :partial => 'shared/pref_nav', 
+           :locals => { :action => params[:action].titleize, :name => nil } %>
+
+<div class="container">
+  <%= error_messages_for :paginator %>
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+  
+  <% form_tag :action => 'paginator' do %>
+    <div class="container_div">
+      <h1>Paginator</h1>
+      <div class="cssform">
+		<label for="paginator_description">Description</label><blockquote><%= @paginator.description %></blockquote><br/>
+		<label for="paginator_value">Value</label><%= text_field 'paginator', 'value' %><br/>
+        <br/>
+        <%= submit_tag 'Update' %>    
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Action", "#"  %>
+      <ul>
+        <li><%= link_to 'Back', :action => 'index' %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>

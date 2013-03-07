@@ -1,0 +1,52 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/calendar_date_select/test/functional
+svn://berkeley/ums
+
+
+
+2008-01-11T05:42:53.328790Z
+41
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+helper_methods_test.rb
+file
+
+
+
+
+2008-02-14T01:57:36.329315Z
+9a19a8683e81e68bc4470f267c894248
+2008-01-11T05:42:53.328790Z
+41
+isaac
+
+calendar_date_select_test.rb
+file
+
+
+
+
+2008-02-14T01:57:36.344932Z
+9a722c545d4921913b11718440fb6aab
+2008-01-11T05:42:53.328790Z
+41
+isaac
+

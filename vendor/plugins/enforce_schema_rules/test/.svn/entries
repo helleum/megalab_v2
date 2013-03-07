@@ -1,0 +1,52 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/enforce_schema_rules/test
+svn://berkeley/ums
+
+
+
+2008-04-29T09:16:58.991163Z
+74
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+test_setup.rb
+file
+
+
+
+
+2008-05-21T07:21:06.550094Z
+29a22c645e6cf0762da8285a938b0788
+2008-04-29T09:16:58.991163Z
+74
+isaac
+
+enforce_test.rb
+file
+
+
+
+
+2008-05-21T07:21:06.550094Z
+afd51a09f12a43d5d0ae0fe96b2ff25c
+2008-04-29T09:16:58.991163Z
+74
+isaac
+

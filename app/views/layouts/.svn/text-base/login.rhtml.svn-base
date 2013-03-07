@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>UMS - <%= yield(:title) || "MEGALab" %></title>
+
+  <!-- Solve multiple window.onload problem in javascript -->
+  <script type="text/javascript"> 
+	function getOLs()
+	{ 
+	  if(typeof window.onload=='function'){ // test to see if onload has been set 
+	  if(typeof ol_ol=='undefined')ol_ol=new Array(); // test if array variable already exists 
+	    ol_ol.push(window.onload); // this captures any previous onload function 
+	  } 
+	} 
+  </script> 
+  
+  <!-- Clock -->
+  <script type="text/javascript">var currenttime = '<%= Time.now.strftime("%B %d, %Y %H:%M:%S") %>';</script>
+  <%= javascript_include_tag 'servertime' %>  
+
+  <%= stylesheet_link_tag 'reset' %>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'base' %>
+  <%= stylesheet_link_tag 'login' %>
+  <%= stylesheet_link_tag 'layout' %>
+  <!--[if IE]>
+    <%= stylesheet_link_tag 'ieonly' %>
+  <![endif]-->
+</head>
+<body>
+
+<div class="header">
+  <div class="title1">UNIVERSITI MALAYSIA SABAH</div>
+  <div class="title2">MEGALAB SERVICES NETWORK</div>
+</div>
+
+<div class="banner">
+  <div class="left_div">
+    Date/ Time: <%= Time.now.day.ordinalize + Time.now.strftime(" %B %Y, %A") %>
+	<span id="servertime"></span>
+  </div>
+  
+  <div class="right_div">
+    <%= link_to_original(image_tag("about.gif", :size => "16x16", :border => 0, :align => "top") + " About", "#" ) %>
+  </div>
+
+  <div class="spacer"></div>
+</div>
+
+  <div id="contentwrapper">
+    <div id="contentcolumn_login">
+      <div class="innertube_login">
+        
+
+        <div class="login_box">
+        <% unless flash[:notice].nil? -%><p style="color: green"><%= flash[:notice] %></p><% end -%>
+        <% unless flash[:alert].nil? -%><p style="color: red"><%= flash[:alert] %></p><% end -%>
+        <% unless flash[:error].nil? -%><p style="color: red"><%= flash[:error] %></p><% end -%>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="spacer"></div>
+  
+<div class="footer">
+  <div class="left_div">
+    <%= link_to "Privacy Statement", "#" %>
+    &nbsp;|&nbsp;
+    <%= link_to "Term of use", "#" %>
+  </div>
+  
+  <div class="right_div">
+    Copyright &copy; 2007 SRIKOM. All rights reserved.
+  </div>
+  
+  <div class="spacer"></div>
+</div>
+
+</body>
+</html>

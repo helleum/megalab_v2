@@ -1,0 +1,40 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/active_record_defaults/lib
+svn://berkeley/ums
+
+
+
+2008-01-09T06:58:27.257174Z
+38
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+active_record_defaults.rb
+file
+
+
+
+
+2008-02-14T01:57:36.048214Z
+8d24acbd7a46c5815d9b0b5de52b8a46
+2008-01-09T06:58:27.257174Z
+38
+isaac
+

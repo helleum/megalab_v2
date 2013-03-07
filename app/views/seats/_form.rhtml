@@ -1,0 +1,13 @@
+<!--[form:seat]-->
+<label for="seat_display_name">Display name</label><%= text_field 'seat', 'display_name'  %><br/>
+<label for="seat_display_order">Seat Display Order</label><%= text_field 'seat', 'display_order' %><br/>
+<% unless @seat.new_record? -%>
+<label for="seat_status">Status :</label><%= text_field 'seat', 'status', :disabled => true, :value => @seat.status? %><br/>
+<% end -%>
+<!--
+<label for="seat_duration">Duration :</label><%= select("seat", "duration", [["10"],["20"],["30"],["40"],["60"]]) %> Minutes<br/>
+<label for="seat_condition">Condition :</label><%= select("seat", "condition", Seat::CONDITION_STATE.sort {|a,b| a[1]<=>b[1]}) %><br/>
+-->
+<label for="seat_remark">Remark</label><%= text_area 'seat', 'remark', "cols" => 40, "rows" => 6 %><br/>
+<!--[eoform:seat]-->
+

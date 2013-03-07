@@ -1,0 +1,128 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+.fieldWithErrors {
+  display: table;
+}
+
+.fieldWithErrors input
+{
+    border: 1px solid #c00;
+    background: #fbd2d2;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  background: url(/images/alert_icon.gif) no-repeat #c00 5px 5px;
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 25px;
+  font-size: 12px;
+  margin: -7px;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+  padding-top: 18px;
+  font-weight: bold;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+  margin-left: 30px;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+div.helprequest-list {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+#helprequest-list .list-open, .show-open {
+  color:   #c32d32;
+}
+
+#helprequest-list .list-reviewing, .show-reviewing {
+  color:   #28903a;
+}
+
+#helprequest-list .list-accepted, .show-accepted {
+  color:   #0792d5;
+}
+
+#helprequest-list .list-closed, .show-closed {
+  color:   #708090;
+}
+
+/* Digg style Pagination Links */
+  .pagination {
+    margin: 10px 0px 0px -2px;
+  }
+  .pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #b1b0b0;
+    text-decoration: none;
+    color: #646161;
+  }
+  .pagination a:hover, .pagination a:active {
+    border: 1px solid #313030;
+    color: #000;
+  }
+  .pagination span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #646161;
+    font-weight: bold;
+    background-color: #b1b0b0;
+    color: #FFF;
+  }
+  .pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #eee;
+    color: #ddd;
+  }

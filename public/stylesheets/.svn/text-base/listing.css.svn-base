@@ -1,0 +1,57 @@
+/* 
+   Description
+   -----------
+   CSS for listing table.
+   
+   Usage
+   -----
+   1) Include the form into a div class "csslisting".
+   2) To display different color for odd or even row
+       <tr class="<%= cycle('list_line_odd','list_line_even') %>">
+*/
+
+.csslisting
+{
+}
+
+.csslisting table
+{
+    width: 100%;
+    background: #ffffff;
+}
+
+.csslisting table th
+{
+    background-color: #e3e3e7;
+    padding: 2px 5px;
+    font-weight: bold;
+    color: #0e6c99;
+}
+
+.csslisting table th a:link, .csslisting table th a:active, .csslisting table th a:visited
+{
+	color: #0e6c99;
+	text-decoration: none;
+}
+
+.csslisting table th a:hover
+{
+	color: #0792d5;
+	text-decoration: none;
+}
+
+.csslisting table td
+{
+    padding: 2px 5px;
+    border: 1px solid #e4e5e5;
+}
+
+.csslisting .list_line_odd
+{
+    background-color: ;
+}
+
+.csslisting .list_line_even
+{
+    background-color: #f7f7f7;
+}

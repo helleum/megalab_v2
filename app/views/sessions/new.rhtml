@@ -1,0 +1,15 @@
+<% content_for :title do %>
+  Login
+<% end %>
+
+<% form_tag session_path do -%>
+<p>Please type in your username and password to login</p>
+
+<label for="login">Username</label><%= text_field_tag 'login' %><br/>
+
+<label for="password">Password</label><%= password_field_tag 'password' %><br/>
+
+<label for="remember_me">Remember me</label><%= check_box_tag 'remember_me' %><br/>
+
+<label>&nbsp;</label><%= style_link_to_buttons(submit_tag('Login', :class => "loginbutton")) %><br/>
+<% end -%>

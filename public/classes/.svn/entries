@@ -1,0 +1,41 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/public/classes
+svn://berkeley/ums
+
+
+
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+AppletWhoAmI.class
+file
+
+
+
+
+2007-12-14T02:53:08.640344Z
+2ea32ed5f8ac3c1fcd120de8293e723f
+2007-12-04T01:34:54.954671Z
+1
+isaac
+has-props
+

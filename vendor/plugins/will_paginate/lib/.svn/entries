@@ -1,0 +1,43 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/will_paginate/lib
+svn://berkeley/ums
+
+
+
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+will_paginate
+dir
+
+will_paginate.rb
+file
+
+
+
+
+2007-12-14T02:52:16.649310Z
+2e8165f5d32a34eddf07ac67a244891b
+2007-12-04T01:34:54.954671Z
+1
+isaac
+

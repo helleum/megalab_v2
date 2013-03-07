@@ -1,0 +1,42 @@
+<%= render :partial => '/shared/user_nav', 
+           :locals => { :title =>  'Permissions', 
+		   :name => nil, :action => nil } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <div class="button_div">
+      <%= style_link_to_buttons link_to('Synchronize', synchronize_permissions_path) %>
+	  <%= style_link_to_buttons link_to('New Permission', new_permission_path) %>
+    </div>
+    <h1>Permission</h1>
+    <div class="spacer"></div>
+    <div class="csslisting">
+      <table cellpadding="5" cellspacing="0">
+        <tr> 
+          <th>Actions</th>
+   		  <th>Controller Name</th>
+		  <th>Action Name</th>
+        </tr>
+        <% for permission in @permissions %> 
+        <tr valign="top">
+          <td>
+            <%= icon_to(edit_img, edit_permission_path(permission)) %>
+            <%= icon_to(delete_img, permission_path(permission), :confirm => 'Are you sure?', :method => :delete ) %>
+		  </td>
+ 	      <td><%=h permission.controller_name %></td>
+	      <td><%=h permission.action_name %></td>
+    	</tr> 
+        <% end %> 
+      </table> 
+	  <%= render :partial => 'shared/records', :object => @permissions %>
+    </div>
+  </div>
+  <%= will_paginate @permissions %>
+</div>

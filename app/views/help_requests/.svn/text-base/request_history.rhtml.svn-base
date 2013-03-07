@@ -1,0 +1,54 @@
+<%= render :partial => 'shared/megalab_nav', 
+           :locals => { :title => @help_request.class.to_s.titleize, 
+						:name => @help_request.id, 
+						:action => params[:action].titleize } %>
+						
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <h1>Help Request History for ID <%= @help_request.id %></h1>
+    <div id="helprequest-list", class="csslisting">
+      <table cellpadding="5" cellspacing="0">
+        <tr> 
+          <th>Created By</th>
+          <th>Created At</th> 
+          <th>Action</th> 
+   	    </tr> 
+   	    <% for history in @help_request.help_request_monitoring_histories %>
+   	    <tr valign="top">
+          <td align="left"><%= history.created_by.login_name.titleize rescue "&nbsp;" %></td> 
+  	      <td align="left"><%= fmt_datetime(history.created_at) %></td> 
+          <td align="left"><%= history.action?.titleize  %></td>      
+        </tr> 
+        <% end %> 
+      </table> 
+    </div>
+  </div>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Action", "#"  %>
+      <ul>
+        <li><%= link_to "Back", :action => 'show', :id => history.help_request %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>

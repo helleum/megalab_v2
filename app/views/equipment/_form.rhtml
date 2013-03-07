@@ -1,0 +1,14 @@
+<!--[form:equipment]-->
+<label for="equipment_asset_no">Asset no</label><%= text_field 'equipment', 'asset_no' %><br/>
+<% if @equipment.seat.nil? -%>
+<label for="equipment_serial_no">Serial no</label><%= text_field 'equipment', 'serial_no' %><br/>
+<label for="equipment_hardware_address">Hardware address</label><%= text_field 'equipment', 'hardware_address' %><br/>
+<% else -%>
+<label>&nbsp;</label><small>Please remove seat to edit Serial no &amp; Hardware address</small><br/>
+<label for="equipment_seat_id">Seat No</label><%= text_field 'equipment', 'seat_id', :disabled => true, :value => @equipment.seat.display_name %><br/>
+<label for="equipment_serial_no">Serial no</label><%= text_field 'equipment', 'serial_no', :disabled => true %><br/>
+<label for="equipment_hardware_address">Hardware address</label><%= text_field 'equipment', 'hardware_address', :disabled => true %><br/><br/>
+<% end -%>
+<label for="equipment_description">Description</label><%= text_area 'equipment', 'description', "cols" => 40, "rows" => 6 %><br/>
+<label for="equipment_remark">Remark</label><%= text_area 'equipment', 'remark', "cols" => 40, "rows" => 6 %><br/>
+<!--[eoform:equipment]-->

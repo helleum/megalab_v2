@@ -1,0 +1,82 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/bundle_fu
+svn://berkeley/ums
+
+
+
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+test
+dir
+
+init.rb
+file
+
+
+
+
+2007-12-14T02:52:18.837748Z
+fe631b3bedfac8bca579a2eee1edeb05
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+lib
+dir
+
+environment.rb
+file
+
+
+
+
+2007-12-14T02:52:18.837748Z
+a020ccbb97a4800bbbfba2bfd150a721
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+MIT-LICENSE
+file
+
+
+
+
+2007-12-14T02:52:18.837748Z
+ca7b200fca209f961fe972c43305d6c1
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+README
+file
+
+
+
+
+2007-12-14T02:52:18.853380Z
+b784acbef2963361268a6ee1ee5c82ab
+2007-12-04T01:34:54.954671Z
+1
+isaac
+

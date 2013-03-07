@@ -1,0 +1,52 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/sortable-list/lib
+svn://berkeley/ums
+
+
+
+2007-12-18T02:07:49.350733Z
+20
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+hash_ext.rb
+file
+
+
+
+
+2008-01-08T01:09:30.258652Z
+fc8ba6c5ddde08f26e889296716eab3f
+2007-12-14T10:08:46.137349Z
+18
+isaac
+
+sortable_list_helper.rb
+file
+
+
+
+
+2008-01-08T01:09:30.274273Z
+64c596801be5456a00f97a79a241291c
+2007-12-18T02:07:49.350733Z
+20
+isaac
+

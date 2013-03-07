@@ -1,0 +1,60 @@
+<%= render :partial => 'shared/pref_nav', 
+           :locals => { :action => params[:action].titleize, :name => nil } %>
+
+<div class="container">
+  <%= error_messages_for :account %>
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+  
+  <% form_tag :action => 'my_account' do %>
+    <div class="container_div">
+      <h1>My Account</h1>
+      <div class="cssform">
+		<label for="account_login_name">Login Name</label><blockquote><%= @account.login_name %></blockquote><br/>
+		<label for="account_crypted_password">Password*</label><%= password_field 'account', :password %><br/>
+		<label>&nbsp;</label><small>Leave password fields empty if you're not changing your password</small><br/>
+		<label for="account_password_confirmation">Confirm*</label><%= password_field 'account', :password_confirmation %><br/>
+		<hr />
+		<label for="account_display_name">Display Name*</label><%= text_field 'account', 'display_name' %><br/>
+		<label for="account_full_name">Full Name</label><%= text_field 'account', 'full_name' %><br/>
+		<label for="account_mycard_no">Mycard No</label><%= text_field 'account', 'mycard_no' %><br/>
+		<label for="account_passport_no">Passport No</label><%= text_field 'account', 'passport_no' %><br/>
+		<label for="account_idcard_no1">ID Card No 1</label><%= text_field 'account', 'idcard_no1' %><br/>
+		<label for="account_idcard_no2">ID Card No 2</label><%= text_field 'account', 'idcard_no2' %><br/>
+		<hr />
+		<% unless @account.description.blank? %>
+		<label for="account_description">Description</label><%= @account.description %><br/>
+		<% end %>
+		<% unless @account.remark.blank? %>
+		<label for="account_remark">Remark:</label><%= @account.remark %><br/>
+		<% end %>
+        <br/>
+        <%= submit_tag 'Update' %>  
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Action", "#"  %>
+      <ul>
+        <li><%= link_to 'Back', :action => 'index' %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>

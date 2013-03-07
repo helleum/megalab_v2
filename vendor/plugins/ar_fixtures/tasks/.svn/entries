@@ -1,0 +1,40 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/ar_fixtures/tasks
+svn://berkeley/ums
+
+
+
+2008-04-23T03:43:24.608243Z
+68
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+ar_fixtures.rake
+file
+
+
+
+
+2008-05-21T07:21:06.316150Z
+a8daea9227b66a696774a7c5653e3d7e
+2008-04-23T03:43:24.608243Z
+68
+isaac
+

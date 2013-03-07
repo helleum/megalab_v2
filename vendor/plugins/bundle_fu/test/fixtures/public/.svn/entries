@@ -1,0 +1,34 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/bundle_fu/test/fixtures/public
+svn://berkeley/ums
+
+
+
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+javascripts
+dir
+
+stylesheets
+dir
+

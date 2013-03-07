@@ -1,0 +1,60 @@
+<%= render :partial => 'shared/pref_nav', 
+           :locals => { :action => params[:action].titleize, :name => nil } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <div class="button_div">
+      <%= style_link_to_buttons link_to_original('New Parameter', :action => 'new') if @can_create %>
+    </div>
+    <h1>System Parameters</h1>
+    <div class="spacer"></div>
+    <div class="csslisting">
+      <table cellpadding="5" cellspacing="0">
+        <tr> 
+          <th>Actions</th>
+          <th>Description</th>
+          <th>Value</th>
+          <th>Name</th>
+        </tr>
+        <% for system_parameter in @system_parameters %>
+        <tr valign="top">
+          <td><%= icon_to(edit_img, :action => 'edit', :id => system_parameter) %> <%= icon_to(delete_img, { :action => 'destroy', :id => system_parameter }, :confirm => 'Are you sure?', :method => :post) %></td>
+    	  <td align="left"><%=h system_parameter.description %></td>
+    	  <td align="left"><%=h system_parameter.value %></td>
+    	  <td align="left"><%=h system_parameter.name %></td>
+    	</tr> 
+        <% end %> 	
+      </table> 
+	  <%= render :partial => 'shared/records', :object => @system_parameters %>
+    </div>
+  </div>
+  <%= will_paginate @system_parameters %>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Action", "#"  %>
+      <ul>
+        <li><%= link_to 'Back', :controller => 'preferences' %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>

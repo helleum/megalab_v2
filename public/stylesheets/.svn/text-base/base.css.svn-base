@@ -1,0 +1,205 @@
+body
+{
+    min-width: 800px;
+}
+
+body *
+{
+    font-family: arial, helvetica, sans-serif;
+}
+
+/****** Header *****/
+
+.header
+{
+    background: url(/images/logo.gif) no-repeat #0054a6 15px 12px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 80px;
+    height: 60px;
+}
+
+.header .title1
+{
+    font-size: 22px;
+    padding-top: 5px;
+    color: #ffffff;
+}
+
+.header .title2
+{
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    color: #ffffff;
+}
+
+.header .login_user
+{
+	float: right;
+	color: #ffffff;
+	padding-right: 10px;
+}
+
+/***** Banner *****/
+
+.banner
+{   
+    background: #0072bc;
+}
+
+.banner .left_div, .banner .right_div
+{
+    background: #0072bc;
+    font-size: 12px;
+    color: #ffffff;
+    padding: 4px 10px;
+}
+
+.banner .left_div
+{
+    float: left;
+}
+
+.banner .right_div
+{
+    float: right;
+}
+
+.banner .right_div a:link, .banner .right_div a:visited, .banner .right_div a:active 
+{
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+
+/***** Flash *****/
+.flash_notice
+{
+    background: #cbe7da;
+    border: 1px solid #79a792;
+    padding: 5px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.flash_error
+{
+    background: #e7cbcb;
+    border: 1px solid #a77979;
+    padding: 5px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/***** Footer *****/
+
+
+.footer
+{
+    background: #0072bc;
+}
+
+.footer .left_div, .footer .right_div
+{
+    background: #0072bc;
+    font-size: 12px;
+    color: #ffffff;
+    padding: 4px 10px;
+}
+
+.footer .left_div
+{
+    float: left;
+}
+
+.footer .left_div a:link, .footer .left_div a:visited, .footer .left_div a:active 
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer .right_div
+{
+    float: right;
+}
+
+/***** Other *****/
+
+.spacer
+{
+    clear: both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+    
+}
+
+.history_text_box
+{
+    border: 1px solid #dae0e2;
+    background: #ffffff;
+}
+
+.history_text_box textarea
+{
+    width: 98%;
+    border: 1px solid #ffffff;
+    padding: 5px;
+}
+
+.no_record
+{
+	padding: 3px 6px;
+}
+
+/***** Button *****/
+.button_div
+{
+    float: right;
+    margin-right: 5px;
+}
+
+.buttonleft
+{
+    background: url(/images/buttonl.gif) no-repeat;
+    width: 5px;
+    height: 22px;
+    margin: 0px; 
+    margin-left: 6px;   
+    float: left;
+}
+
+.buttonbg
+{
+    background: url(/images/button.gif) repeat-x;
+    height: 22px;
+    padding-top: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: #3b3939;
+    float: left;
+}
+
+.buttonbg a:link, .buttonbg a:active, .buttonbg a:visited
+{
+    text-decoration: none;
+    color: #3b3939;
+    padding: 3px;
+}
+
+.buttonbg a:hover
+{
+    text-decoration: none;
+    color: #3b3939;
+}
+
+
+.buttonright
+{
+    background: url(/images/buttonr.gif) no-repeat;
+    width: 5px;
+    height: 22px;
+    margin: 0px;   
+    float: left; 
+}  

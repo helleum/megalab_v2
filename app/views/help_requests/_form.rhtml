@@ -1,0 +1,29 @@
+<%= error_messages_for 'help_request' %>
+
+<div class="form_container">
+  <!--[form:help_request]-->
+
+  <input type="hidden" id="hardware_address" name="help_request[hardware_address]" /> 
+
+  <div class="captcha">
+    <%= show_simple_captcha(:object=>"help_request", :image_style => "embosed_silver", :distortion => "medium") %>
+  </div>
+  
+  <br/>
+  <div class="roundcont">
+      <div class="roundtop">
+        <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+      </div>
+    </div>
+  <div class="form_header_div">
+    <h1>Remark</h1>
+    <div class="csslisting">    
+      <div class="form_text_box">
+        <%= text_area 'help_request', 'request_remark' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--[eoform:help_request]-->
+

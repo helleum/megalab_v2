@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>UMS - <%= yield(:title) || "MEGALab" %></title>
+
+  <%= stylesheet_link_tag 'reset' %>
+  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'layout' %>
+  <%= stylesheet_link_tag 'base' %>
+  <%= stylesheet_link_tag 'headerbar' %>
+  <%= stylesheet_link_tag 'form' %>
+  <!--[if IE]>
+    <%= stylesheet_link_tag 'ieonly' %>
+  <![endif]-->
+
+  <script language="JavaScript" type="text/javascript">
+    function loadApplet() {
+      document.getElementById('hardware_address').value=document.whoami.getHardwareAddresses();
+    }
+  </script>
+</head>
+<body onload="loadApplet();">
+
+<applet name="whoami" code="AppletWhoAmI.class" codebase="/classes" width=0 Height=0>
+  <PARAM name="archive" value="AppletWhoAmI.class?v=2007102008">
+</applet>
+
+<div class="header">
+  <div class="title1">UNIVERSITI MALAYSIA SABAH</div>
+  <div class="title2">MEGALAB SERVICES NETWORK</div>
+</div>
+
+<div class="headerbar">
+  <div class="left">
+    &nbsp;&nbsp;&nbsp;&nbsp;New Help Request
+  </div>
+  
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <% unless flash[:notice].nil? -%><div class="flash_notice"><%= flash[:notice] %></div><% end -%>
+  <% unless flash[:alert].nil? -%><div class="flash_error"><%= flash[:alert] %></div><% end -%>
+  <% unless flash[:error].nil? -%><div class="flash_error"><%= flash[:error] %></div><% end -%>
+
+  <%= yield  %>
+</div>
+
+<div class="footer">
+  <div class="left_div">
+    <%= link_to "Privacy Statement", "#" %>
+    &nbsp;|&nbsp;
+    <%= link_to "Term of use", "#" %>
+  </div>
+  
+  <div class="right_div">
+    Copyright &copy; 2007 SRIKOM. All rights reserved.
+  </div>
+  
+  <div class="spacer"></div>
+</div>
+
+</body>
+</html>

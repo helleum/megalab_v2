@@ -1,0 +1,64 @@
+<%= render :partial => 'shared/user_nav', 
+           :locals => { :title => @user.class.to_s.titleize, 
+						:name => @user.display_name.titleize, :action => nil } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <h1>User Information</h1>
+    <div class="cssshow">
+      <table>
+        <tr><td class="desc">Login name</td><td><%=h @user.login_name %></td></tr>
+        <tr><td class="desc">Nature</td><td><%=h @user.nature? %></td></tr>
+        <tr><td class="desc">Status</td><td><%=h @user.status? %></td></tr>
+        <tr><td class="desc">Pending Verification Time</td><td><%= fmt_datetime(@user.verification_time) rescue nil %></td></tr>
+        <tr><td class="desc">Group</td><td><%=h @user.showgroup %></td></tr>
+        <tr><td class="desc">Display Name</td><td><%=h @user.display_name %></td></tr>
+        <tr><td class="desc">Full Name</td><td><%=h @user.full_name %></td></tr>
+        <tr><td class="desc">My Card No</td><td><%=h @user.mycard_no %></td></tr>
+        <tr><td class="desc">Passport No</td><td><%=h @user.passport_no %></td></tr>
+        <tr><td class="desc">Id Card 1</td><td><%=h @user.idcard_no1 %></td></tr>
+        <tr><td class="desc">Id Card 2</td><td><%=h @user.idcard_no2 %></td></tr>
+        <tr><td class="desc">Description</td><td><%=h @user.description %></td></tr>
+        <tr><td class="desc">Remark</td><td><%=h @user.remark %></td></tr>
+        <tr><td class="desc">Access Control</td><td><%=h @user.access? %><%="\t" %></td></tr>
+        <tr><td class="desc">Last Access</td><td><%= fmt_datetime(@user.ml_last_access) rescue "N/A" %></td></tr>
+        <tr><td class="desc">Created by</td><td><%=h @user.created_by.login_name.titleize rescue nil %></td></tr>
+        <tr><td class="desc">Created at</td><td><%= fmt_datetime(@user.created_at) rescue nil %></td></tr>
+        <tr><td class="desc">Updated By</td><td><%=h @user.updated_by.login_name.titleize rescue nil %></td></tr>
+        <tr><td class="desc">Updated At</td><td><%= fmt_datetime(@user.updated_at) rescue nil %></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Actions", "#"  %>
+      <ul>
+          <li><%= link_to 'Edit', :action => 'edit', :id => @user %></li>
+          <li><%= link_to (@user.allowed? ? 'Deny' : 'Allow'), :action => 'change_access', :id => @user %></li>
+          <li><%= link_to 'Access Control History', :action => 'access_history', :id => @user unless @user.user_ml_access_control_histories.empty? %></li>
+          <li><%= link_to 'Back', :action => 'index' %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>
+

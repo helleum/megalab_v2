@@ -1,0 +1,52 @@
+/****** Login *****/
+
+.login_box
+{
+    background: #e3e3e7;
+    width: 500px;
+    text-align: center;
+    margin: 0px auto;
+    padding: 25px 0px;
+    
+}
+
+.login_box p
+{
+    font-weight: bold;
+	font-size: 13px;
+	color: #0054a6;
+	margin-bottom: 25px;
+}
+
+.login_box form
+{
+    text-align: left;
+    width: 350px;
+    margin: 0px auto;
+}
+
+.login_box label
+{
+	float: left;
+	width: 150px;
+	font-weight: bold;
+	font-size: 13px;
+	color: #0054a6;
+	vertical-align: middle;
+}
+
+.login_box input
+{
+    vertical-align: middle;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+.loginbutton
+{
+    border: 0px solid #ffffff;
+    background: transparent;
+    margin-top: -1px;
+	font-size: 12px;
+	color: #5b5b5b;
+}

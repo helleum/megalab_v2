@@ -1,0 +1,45 @@
+<%= render :partial => 'shared/megalab_nav', 
+           :locals => { :title => @equipment.class.to_s.titleize, 
+						:name => @equipment.serial_no, 
+						:action => params[:action].titleize } %>
+
+<div class="container">
+  <%= error_messages_for 'equipment' %>
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+  
+  <% form_tag :action => 'update', :id => @equipment do %>
+    <div class="container_div">
+      <h1>Editing Equipment</h1>
+      <div class="cssform">
+        <%= render :partial => 'form' %>    
+        <br/>
+        <%= submit_tag 'Edit' %>    
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Action", "#"  %>
+      <ul>
+        <li><%= link_to 'Back', :action => 'show', :id => @equipment %> </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>

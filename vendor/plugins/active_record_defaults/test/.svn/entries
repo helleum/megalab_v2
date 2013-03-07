@@ -1,0 +1,79 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/active_record_defaults/test
+svn://berkeley/ums
+
+
+
+2008-01-09T06:58:27.257174Z
+38
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+active_record_defaults_test.rb
+file
+
+
+
+
+2008-02-14T01:57:35.938898Z
+93efd150502388fa69ac853796a77179
+2008-01-09T06:58:27.257174Z
+38
+isaac
+
+schema.rb
+file
+
+
+
+
+2008-02-14T01:57:35.938898Z
+10fd0814144647ffef4bd609863b1087
+2008-01-09T06:58:27.257174Z
+38
+isaac
+
+abstract_unit.rb
+file
+
+
+
+
+2008-02-14T01:57:35.938898Z
+5537467aa1d715944a60c5b0793c7180
+2008-01-09T06:58:27.257174Z
+38
+isaac
+
+database.yml
+file
+
+
+
+
+2008-02-14T01:57:35.954514Z
+c336fdb8f240fd5ff7d7e04e1b3ab76f
+2008-01-09T06:58:27.257174Z
+38
+isaac
+
+fixtures
+dir
+

@@ -1,0 +1,188 @@
+/* 
+   Description
+   -----------
+   Tableless form. 
+   Please take note if you wanna set width on input, it will cause 
+   problem on radio button that stay side by side.
+   
+   Usage
+   -----
+   1) Include the form into a div class "cssform".
+   2) Your form html should be as follow :
+      eg: <label>Label</label><input><br/> 
+   3) Include class "submitbutton" to your button
+*/
+.cssform
+{
+    background: #e2f4fe;
+    border: 1px solid #d1d2d4;
+    padding: 10px;
+}
+
+.cssform hr
+{
+    margin-top: 10px;
+    margin-bottom: 13px;
+}
+
+.cssform label
+{
+	float: left;
+	width: 150px;
+	font-weight: bold;
+	color: #0f556a;
+}
+
+.cssform input, .cssform textarea, .cssform select
+{
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+.cssform blockquote
+{
+    vertical-align: middle;
+    margin-bottom: -15px;
+}
+
+.submitbutton
+{
+	margin-bottom: 10px;
+	width: 90px;
+}
+
+.cssform br
+{
+	clear: left;
+}
+
+.cssform fieldset
+{
+    border: 1px solid #d1d2d4;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.cssform fieldset legend
+{
+    color: #0f556a;
+}
+
+
+/***** New Request *****/
+
+.table_form
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.form_container
+{
+    width: 70%;
+}
+
+.form_header_div
+{
+    background: #d1d2d4;
+    width: 100%;
+    margin-top: 0px;
+}
+
+.form_header_div h1
+{
+    color: #0f556a;
+    font-size: 14px;
+    margin: 0px 8px;
+    margin-top: -4px;
+    margin-bottom: 2px;
+}
+
+.captcha img
+{
+    border: 1px solid #dae0e2;
+    background: #e2f4fd;
+    padding: 10px;
+}
+
+.form_text_box
+{
+    border: 1px solid #dae0e2;
+    background: #e2f4fd;
+    padding: 10px;
+}
+
+.form_text_box textarea
+{
+    width: 98%;
+    border: 1px solid #dae0e2;
+    padding: 5px;
+}
+
+/***** Group/Roles Form *****/
+
+.groupform
+{
+    background: #e2f4fe;
+    border: 1px solid #d1d2d4;
+    padding: 10px;
+}
+
+.groupform table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    
+}
+
+.groupform table tr td
+{
+    padding: 5px 10px;
+}
+
+.groupdesc
+{
+    font-weight: bold;
+    color: #0f556a;
+    width: 130px;
+    vertical-align: top;
+}
+
+.groupdesc label a:link, .groupdesc label a:visited, .groupdesc label a:active
+{
+    color: #0f556a;
+}
+
+.groupdesc label a:hover
+{
+    color: #28903a;
+}
+
+.groupform ul ul
+{
+    padding-left: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;    
+}
+
+.groupform ul li a:link, .groupform ul li a:visited, .groupform ul li a:active
+{
+    text-decoration: none;
+    color: #0f556a;
+}
+
+.groupform ul li a:hover
+{
+    text-decoration: none;
+    color: #28903a;
+}
+
+.with_dot ul
+{
+    list-style-type: disc;
+    padding-left: 15px;
+}
+    
+

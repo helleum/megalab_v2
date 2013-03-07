@@ -1,0 +1,64 @@
+<%= render :partial => 'shared/megalab_nav', 
+           :locals => { :title => 'Reports', 
+						:name => params[:action].titleize,
+						:action => nil } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <h1>Website Hit Count</h1>
+    <div class="spacer"></div>
+	  <div class="container_div">
+		<div class="cssform">
+    		<% form_tag do %>
+			  <% if request.post? -%>
+			  <label for="report_date">Month/Year</label><%= select_month params[:date][:month].to_i %> <%= select_year params[:date][:year].to_i, :start_year => 2008, :end_year => 2020 %><br/>
+			  <% else -%>
+			  <label for="report_date">Month/Year</label><%= select_month Date.today %> <%= select_year Date.today, :start_year => 2008, :end_year => 2020 %><br/>
+			  <% end -%>
+			  <%= submit_tag "Search", :name => nil %>&nbsp;<%= button_to_link 'Reset' %>
+			<% end %>
+	    </div>
+	  </div>
+    <div class="csslisting">
+      <table cellpadding="5" cellspacing="0">
+        <tr> 
+		  <th>Available Reports</th>
+        </tr>
+        <% for report in @reports %> 
+        <tr valign="top">
+ 	      <td><%= link_to fmt_date(report.report_date), :action => 'website_hit_count_csv', :date => fmt_date(report.report_date) %></td>
+    	</tr> 
+        <% end %> 
+      </table> 
+	</div>
+	</div>
+  </div>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Actions", "#"  %>
+      <ul>
+          <li><%= link_to 'Back', :action => 'index' %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>

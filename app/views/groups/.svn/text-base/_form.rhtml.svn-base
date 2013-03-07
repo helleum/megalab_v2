@@ -1,0 +1,56 @@
+<!--[form:group]-->
+<table>
+  <tr>
+    <td class="groupdesc"><label for="group_title">Group's Name</label></td>
+    <td><%= (@group.systemgroups? or @group.title.downcase == "administrator") ? @group.title : text_field('group', 'title') %></td>
+  </tr>
+  <% if current_user.has_role?('Root') %>
+<!--
+  <tr>
+    <td class="groupdesc"><label>Group's Parent</label></td>
+    <td>
+      <% unless @group.errors[:parent].nil? %><div class="fieldWithErrors"><% end %>
+      <ul class="groupTree">
+        <li>
+          <% if @group.parent.nil? %>
+            <input id="group_parent_self" type="radio" name="group[parent]" value="" checked="checked" />
+          <% else %>
+            <input id="group_parent_self" type="radio" name="group[parent]" value="" />
+          <% end %>
+          <label for="group_parent_self">no parent (direct root child)</label>
+          <%= groups = Group.filtered_list
+              groups.delete_if { |r| @group.descendants_and_self.include?(r) }
+              node_tree(groups) do |group|
+                result = "<input id=\"group_parent_#{group.id}\" type=\"radio\" name=\"group[parent]\" value=\"#{group.id}\" checked=\"checked\" /> " if @group.parent == group
+                result = "<input id=\"group_parent_#{group.id}\" type=\"radio\" name=\"group[parent]\" value=\"#{group.id}\" /> " if @group.parent != group
+
+                result += "<label for=\"group_parent_#{group.id}\">#{group.title}</label> "
+                result
+              end %>
+        </li>
+      </ul>
+      <% unless @group.errors[:parent].nil? %></div><% end %>
+    </td>
+  </tr> -->
+  <% end %>
+  <tr>
+    <td class="groupdesc"><label for="group_roles"><%= link_to_function "Roles", "Effect.toggle('role_list','appear')" %></label></td>
+    <td>
+	<div id="role_list">    	
+      <% if current_user.has_role?('Root') 
+		   roles = Role.find(:all, :order => "title")
+		 else
+           roles = Role.filtered_list
+		 end %>
+	  <%= node_tree(roles) do |role|
+          result = "<input id=\"group_roles_#{role.id}\" type=\"checkbox\" name=\"group[roles][]\" value=\"#{role.id}\" checked=\"checked\" /> " if @group.roles.include? role
+          result = "<input id=\"group_roles_#{role.id}\" type=\"checkbox\" name=\"group[roles][]\" value=\"#{role.id}\" /> " unless @group.roles.include? role
+          result += "<label for=\"group_roles_#{role.id}\">#{role.title}</label> "
+          result
+      end %>
+    </div>
+	</td>
+  </tr>
+</table>
+<!--[eoform:group]-->
+

@@ -1,0 +1,53 @@
+<%= render :partial => 'shared/megalab_nav', 
+           :locals => { :title => @equipment.class.to_s.titleize, 
+						:name => @equipment.serial_no, 
+						:action => params[:action].titleize } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <h1>Remove Seat</h1>
+    <div class="cssshow">
+      <table>
+        <tr><td class="desc">Asset No</td><td><%=h @equipment.asset_no %></td></tr>
+        <tr><td class="desc">Serial No</td><td><%=h @equipment.serial_no %></td></tr>
+        <tr><td class="desc">Hardware Address</td><td><%=h @equipment.hardware_address %></td></tr>
+        <tr><td class="desc">Description</td><td><%=h @equipment.description %></td></tr>
+        <tr><td class="desc">Assigned Seat</td><td><%=h @equipment.seat.display_name %></td></tr>
+      </table>
+    </div>
+  </div>
+  <br/>
+  
+  <% form_tag :action => 'remove_seat', :id => @equipment do %>
+    <%= submit_tag 'Remove' %> 
+  <% end %>
+</div>
+        
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Action", "#"  %>
+      <ul>
+        <li><%= link_to 'Back', :action => 'show', :id => @equipment %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>
+

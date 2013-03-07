@@ -1,0 +1,87 @@
+<%= render :partial => 'shared/megalab_nav', 
+           :locals => { :title => 'Seats', 
+		   				:name => nil, :action => params[:action].titleize } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <div class="button_div">
+      <%= style_link_to_buttons link_to_function('Search', "Effect.toggle('search_list','blind')") %>
+    </div>
+    <h1>User Seat Assignment History</h1>
+    <div class="spacer">&nbsp;</div>
+	<div id="search_list"<% unless params[:search] %> style="display: none"<% end -%>>
+	  <div class="container_div">
+		<div class="cssform">
+    		<% form_tag({:action => 'user_seat_history'}, {:method => :get}) do %>
+				<label for="full_name">User Full Name</label><%= text_field_tag 'full_name', params[:full_name] %><br/>
+				<label for="display_name">Seat No</label><%= text_field_tag 'display_name', params[:display_name] %><br/>
+				<label for="duration">Duration (Min)</label><%= text_field_tag 'duration', params[:duration] %><br/>
+				<label for="action_done">Action</label><%= select_tag 'action_done', options_for_select([["All",""]] + UserSeatAssignmentHistory.action_select, params[:action_done]) %><br/>
+				<label for="action_remark">Action Remark</label><%= text_field_tag 'action_remark', params[:action_remark] %><br/>
+				<label for="action_by">Action By</label><%= text_field_tag 'action_by', params[:action_by] %><br/>
+				<label for="date_from">Date Range</label><%= calendar_date_select_tag "date_from", params[:date_from], :popup => "force", :year_range => 5.years.ago..0.years.from_now %>  to  <%= calendar_date_select_tag "date_to", params[:date_to], :popup => "force", :year_range => 5.years.ago..0.years.from_now %> (Optional)<br/>
+				<%= hidden_field_tag 'search', 1 %>
+				<%= submit_tag "Find", :name => nil %>&nbsp;<%= button_to_link 'Reset', :action => 'user_seat_history', :params => { :search => 1 } %>
+			<% end %>
+		</div>
+	  </div>
+	</div>
+	<% if @seats.size > 0 %>
+    <div class="csslisting">
+      <table cellpadding="5" cellspacing="0">
+        <tr> 
+          <th><%=s 'users.full_name', :label => 'User Full Name'  %></th>
+          <th><%=s 'seats.display_name', :label => 'Seat No' %></th>
+          <th><%=s 'user_seat_assignment_histories.duration', :label => 'Duration (Min)' %></th>
+          <th><%=s 'user_seat_assignment_histories.action', :label => 'Action' %></th>
+          <th><%=s :action_remark %></th>
+          <th><%=s 'created_bies_user_seat_assignment_histories.full_name', :label => 'Action By' %></th>
+          <th><%=s 'user_seat_assignment_histories.created_at', :descend => true, :default => true, :label => 'Time of Action' %></th> 
+        </tr>
+        <% for seat in @seats %>
+        <tr valign="top">
+    	  <td align="left"><%= seat.user.full_name %></td> 
+    	  <td align="left"><%= seat.seat.display_name %></td> 
+    	  <td align="left"><%= seat.duration/1.minute %></td> 
+    	  <td align="left"><%= seat.action? %></td>
+    	  <td align="left"><%= seat.action_remark %></td>
+    	  <td align="left"><%= truncate(seat.created_by.full_name, 20) %></td>
+    	  <td align="left"><%= fmt_datetime(seat.created_at) %></td>
+    	</tr> 
+        <% end %> 
+      </table> 
+	  <%= render :partial => 'shared/records', :object => @seats %>
+    </div>
+	<% end %>
+  </div>
+  <%= will_paginate @seats %>
+</div>
+
+<% content_for :menubar do %>
+<div class="headerbar">
+  <div class="left">
+    Menu
+  </div>
+ 
+  <div class="spacer"></div>
+</div>
+
+<div class="container">
+  <ul class="tree">
+    <li class="open">
+      <%= link_to "Actions", "#"  %>
+      <ul>
+          <li><%= link_to 'Refresh History' %></li>
+          <li><%= link_to 'Back', :action => 'index' %></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<% end %>

@@ -1,0 +1,33 @@
+<%= render :partial => 'shared/megalab_nav', 
+           :locals => { :title => 'Reports', 
+		   :name => nil, :action => nil  } %>
+
+<div class="container">
+
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+
+  <div class="container_div">
+    <h1>Available Reports</h1>
+    <div class="spacer"></div>
+		<div class="csslisting">
+		  <table cellpadding="5" cellspacing="0">
+			<tr>
+				<th>Action</th>
+				<th>Reports</th>
+			</tr>
+		    <tr><td><%= icon_to(show_img, :action => 'vouchers_issued') %></td><td>Vouchers Issued</td></tr>		      
+			<tr><td><%= icon_to(show_img, :action => 'website_hit_count') %></td><td>Website Hit Count</td></tr>
+			<tr><td><%= icon_to(show_img, :action => 'cumulative_lab_machine_usage') %></td><td>Cumulative Lab Machine Usage</td></tr>
+			<% if (Time.now.hour > 0 and Time.now.hour < 8) or current_user.has_role?("Administrator", "Root") -%>
+			<tr><td><%= icon_to(show_img, :action => 'user_usage') %></td><td>User Usage</td></tr>
+			<% else -%>
+			<tr><td>&nbsp;</td><td>User Usage (Report only available before 8am &amp; after 12am)</td></tr>
+			<% end -%>
+		  </table> 
+		</div>
+	</div>
+</div>

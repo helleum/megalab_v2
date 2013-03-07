@@ -1,0 +1,1017 @@
+/* --------- /stylesheets/reset.css --------- */ 
+/*
+Copyright (c) 2006, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 0.11.3
+*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td{margin:0;padding:0;}
+/* table{border-collapse:collapse;border-spacing:0;} */
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}
+strong{font-weight:bold;}
+ol,ul {list-style:none;}
+caption,th {text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+q:before,q:after{content:'';}/* --------- /stylesheets/scaffold.css --------- */ 
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+.fieldWithErrors {
+  display: table;
+}
+
+.fieldWithErrors input
+{
+    border: 1px solid #c00;
+    background: #fbd2d2;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  background: url(/images/alert_icon.gif) no-repeat #c00 5px 5px;
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 25px;
+  font-size: 12px;
+  margin: -7px;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+  padding-top: 18px;
+  font-weight: bold;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+  margin-left: 30px;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+div.helprequest-list {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+
+#helprequest-list .list-open, .show-open {
+  color:   #c32d32;
+}
+
+#helprequest-list .list-reviewing, .show-reviewing {
+  color:   #28903a;
+}
+
+#helprequest-list .list-accepted, .show-accepted {
+  color:   #0792d5;
+}
+
+#helprequest-list .list-closed, .show-closed {
+  color:   #708090;
+}
+
+/* Digg style Pagination Links */
+  .pagination {
+    margin: 10px 0px 0px -2px;
+  }
+  .pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #b1b0b0;
+    text-decoration: none;
+    color: #646161;
+  }
+  .pagination a:hover, .pagination a:active {
+    border: 1px solid #313030;
+    color: #000;
+  }
+  .pagination span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #646161;
+    font-weight: bold;
+    background-color: #b1b0b0;
+    color: #FFF;
+  }
+  .pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #eee;
+    color: #ddd;
+  }/* --------- /stylesheets/layout.css --------- */ 
+#contentwrapper
+{
+    float: left;
+    width: 100%;
+    display: table;
+}
+
+#contentcolumn
+{
+    margin-left: 215px; /*Set left margin to LeftColumnWidth*/
+	border-left: 1px solid #dedede;
+}
+
+#contentcolumn_login
+{
+    margin-left: 0px; /*Set left margin to LeftColumnWidth*/
+}
+
+#leftcolumn
+{
+    float: left;
+    width: 215px; /*Width of left column*/
+    margin-left: -100%;
+    border-right: 1px solid #dedede;
+	overflow: auto;
+	min-height: 470px;
+}
+
+.innertube
+{
+    margin: 0px; /*Margins for inner DIV inside each column (to provide padding)*/
+    margin-top: 0;
+}
+
+.innertube_login
+{
+    margin: 150px 0;
+    text-align: center;
+}
+
+.container
+{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+}
+
+.container_div
+{
+    background: #d1d2d4;
+    width: 100%;
+    margin-top: 0px;
+}
+
+.container_div h1
+{
+    color: #0f556a;
+    font-size: 16px;
+    margin: 2px 8px 10px 8px;
+}
+    
+
+.roundcont
+{
+    width: 100%;
+    background: #d1d2d4;
+    margin-bottom: -2px;
+}
+
+.roundtop
+{
+    background: url(/images/tr.gif) no-repeat top right;
+}
+
+img.corner 
+{
+    width: 10px;
+    height: 10px;
+    border: none;
+    display: block!important;
+}
+
+/* --------- /stylesheets/base.css --------- */ 
+body
+{
+    min-width: 800px;
+}
+
+body *
+{
+    font-family: arial, helvetica, sans-serif;
+}
+
+/****** Header *****/
+
+.header
+{
+    background: url(/images/logo.gif) no-repeat #0054a6 15px 12px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 80px;
+    height: 60px;
+}
+
+.header .title1
+{
+    font-size: 22px;
+    padding-top: 5px;
+    color: #ffffff;
+}
+
+.header .title2
+{
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    color: #ffffff;
+}
+
+.header .login_user
+{
+	float: right;
+	color: #ffffff;
+	padding-right: 10px;
+}
+
+/***** Banner *****/
+
+.banner
+{   
+    background: #0072bc;
+}
+
+.banner .left_div, .banner .right_div
+{
+    background: #0072bc;
+    font-size: 12px;
+    color: #ffffff;
+    padding: 4px 10px;
+}
+
+.banner .left_div
+{
+    float: left;
+}
+
+.banner .right_div
+{
+    float: right;
+}
+
+.banner .right_div a:link, .banner .right_div a:visited, .banner .right_div a:active 
+{
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+
+/***** Flash *****/
+.flash_notice
+{
+    background: #cbe7da;
+    border: 1px solid #79a792;
+    padding: 5px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.flash_error
+{
+    background: #e7cbcb;
+    border: 1px solid #a77979;
+    padding: 5px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/***** Footer *****/
+
+
+.footer
+{
+    background: #0072bc;
+}
+
+.footer .left_div, .footer .right_div
+{
+    background: #0072bc;
+    font-size: 12px;
+    color: #ffffff;
+    padding: 4px 10px;
+}
+
+.footer .left_div
+{
+    float: left;
+}
+
+.footer .left_div a:link, .footer .left_div a:visited, .footer .left_div a:active 
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer .right_div
+{
+    float: right;
+}
+
+/***** Other *****/
+
+.spacer
+{
+    clear: both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+    
+}
+
+.history_text_box
+{
+    border: 1px solid #dae0e2;
+    background: #ffffff;
+}
+
+.history_text_box textarea
+{
+    width: 98%;
+    border: 1px solid #ffffff;
+    padding: 5px;
+}
+
+.no_record
+{
+	padding: 3px 6px;
+}
+
+/***** Button *****/
+.button_div
+{
+    float: right;
+    margin-right: 5px;
+}
+
+.buttonleft
+{
+    background: url(/images/buttonl.gif) no-repeat;
+    width: 5px;
+    height: 22px;
+    margin: 0px; 
+    margin-left: 6px;   
+    float: left;
+}
+
+.buttonbg
+{
+    background: url(/images/button.gif) repeat-x;
+    height: 22px;
+    padding-top: 2px;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: #3b3939;
+    float: left;
+}
+
+.buttonbg a:link, .buttonbg a:active, .buttonbg a:visited
+{
+    text-decoration: none;
+    color: #3b3939;
+    padding: 3px;
+}
+
+.buttonbg a:hover
+{
+    text-decoration: none;
+    color: #3b3939;
+}
+
+
+.buttonright
+{
+    background: url(/images/buttonr.gif) no-repeat;
+    width: 5px;
+    height: 22px;
+    margin: 0px;   
+    float: left; 
+}  
+/* --------- /stylesheets/tree.css --------- */ 
+/*
+ * CSS for Standard tree layout
+ * Copyright (C) 2005 SilverStripe Limited
+ * Feel free to use this on your websites, but please leave this message in the fies
+ * http://www.silverstripe.com/blog
+ */
+
+/*
+ * CSS for Standard tree layout
+ * Copyright (C) 2005 SilverStripe Limited
+ * Feel free to use this on your websites, but please leave this message in the fies
+ * http://www.silverstripe.com/blog
+ */
+ 
+ul.tree{
+	width: auto;
+	padding-left : 0px;
+	margin-left : 0px;
+}
+
+ul.tree img{
+ 	border : none;
+}
+ 
+
+ul.tree, ul.tree ul {
+	padding-left: 0;
+}
+
+ul.tree ul {
+	margin-left: 16px;
+}
+ul.tree li.closed ul {
+	display: none;
+}
+
+
+ul.tree li {
+	list-style: none;
+	background: url(/images/silverstripetree/i-repeater.gif) 0 0 repeat-y;
+	display: block;
+	width: auto;
+	/* background-color:#FFFFFF; */
+}
+
+ul.tree li.last {
+	list-style: none;
+	background-image: none;
+}
+
+/* Span-A: I/L/I glpyhs */
+ul.tree span.a {
+	background: url(/images/silverstripetree/t.gif) 0 50% no-repeat;
+	display: block;
+}
+ul.tree span.a.last {
+	background: url(/images/silverstripetree/l.gif) 0 50% no-repeat;
+}
+
+/* Span-B: Plus/Minus icon */
+ul.tree span.b {
+}
+ul.tree span.a.children span.b {
+	background: url(/images/silverstripetree/minus.gif) 0 50% no-repeat;
+	cursor: pointer;
+}
+ul.tree li.closed span.a.children span.b {
+	background: url(/images/silverstripetree/plus.gif) 0 50% no-repeat;
+	cursor: pointer;
+}
+
+/* Span-C: Spacing and extending tree line below the icon */
+ul.tree span.c {
+	margin-left: 0px;
+}
+ul.tree span.a.children span.c {
+	background: url(/images/silverstripetree/i-bottom.gif) 0 50% no-repeat;
+}
+ul.tree span.a.spanClosed span.c {
+	background-image: none;
+}
+
+
+/* Anchor tag: Page icon */
+ul.tree a  {
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 0px 0px 0px 18px;
+	line-height: 16px;
+
+}
+
+ul.tree span.a.children a {
+}
+ul.tree span.a.children.spanClosed a {
+}
+
+/* Unformatted tree */
+ul.tree.unformatted li {
+	background-image: none;
+	padding-left: 16px;
+}
+ul.tree.unformatted li li {
+	background-image: none;
+	padding-left: 0px;
+}
+
+/*
+ * Divs, by default store vertically aligned data
+ */
+
+ul.tree li div {
+	float: right;
+	clear: right;
+	height: 1em;
+	margin-top: -26px;
+}
+/* As inside DIVs should be treated normally */
+ul.tree div a  {
+	padding: 0;
+	background-image: none;
+	min-height: auto;
+	height: auto;
+}
+
+ul.tree li a:link, ul.tree li a:active, ul.tree li a:visited, ul.tree li a:hover,
+ul.tree li ul li a:link, ul.tree li ul li a:active, ul.tree li ul li a:visited, ul.tree li ul li a:hover
+{
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 12px;
+	padding-bottom: 2px;
+	text-decoration: none;
+}
+
+ul.tree li a:link, ul.tree li a:active, ul.tree li a:visited 
+{
+    color: #0e6c99!important;
+}
+
+ul.tree li a:hover
+{
+    color: #0e6c99!important;
+}
+
+ul.tree li ul li a:link, ul.tree li ul li a:active, ul.tree li ul li a:visited
+{
+    color: #0792d5!important;
+}
+
+ul.tree li ul li a:hover
+{
+    color: #0792d5!important;
+}
+
+
+/* --------- /stylesheets/headerbar.css --------- */ 
+.headerbar
+{
+    background: #e2f4fd;
+    font-size: 12px;
+    color: #0f556a;
+    padding: 4px 10px;
+    height: 15px;
+}
+
+.headerbar .left
+{
+    background: #e2f4fd;
+    float: left;
+}
+
+.headerbar .right
+{
+    background: #e2f4fd;
+    float: right;
+}
+/* --------- /stylesheets/listing.css --------- */ 
+/* 
+   Description
+   -----------
+   CSS for listing table.
+   
+   Usage
+   -----
+   1) Include the form into a div class "csslisting".
+   2) To display different color for odd or even row
+       <tr class="<%= cycle('list_line_odd','list_line_even') %>">
+*/
+
+.csslisting
+{
+}
+
+.csslisting table
+{
+    width: 100%;
+    background: #ffffff;
+}
+
+.csslisting table th
+{
+    background-color: #e3e3e7;
+    padding: 2px 5px;
+    font-weight: bold;
+    color: #0e6c99;
+}
+
+.csslisting table th a:link, .csslisting table th a:active, .csslisting table th a:visited
+{
+	color: #0e6c99;
+	text-decoration: none;
+}
+
+.csslisting table th a:hover
+{
+	color: #0792d5;
+	text-decoration: none;
+}
+
+.csslisting table td
+{
+    padding: 2px 5px;
+    border: 1px solid #e4e5e5;
+}
+
+.csslisting .list_line_odd
+{
+    background-color: ;
+}
+
+.csslisting .list_line_even
+{
+    background-color: #f7f7f7;
+}/* --------- /stylesheets/show.css --------- */ 
+.cssshow
+{
+    background: #ffffff;
+}
+
+.cssshow table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    
+}
+
+.cssshow table tr td
+{
+    padding: 5px 10px;
+    border: 1px solid #dae0e2;
+}
+
+.desc
+{
+    font-weight: bold;
+    color: #0f556a;
+    width: 180px;
+}
+
+.content
+{
+    width: 100%;
+}
+    
+
+/* --------- /stylesheets/form.css --------- */ 
+/* 
+   Description
+   -----------
+   Tableless form. 
+   Please take note if you wanna set width on input, it will cause 
+   problem on radio button that stay side by side.
+   
+   Usage
+   -----
+   1) Include the form into a div class "cssform".
+   2) Your form html should be as follow :
+      eg: <label>Label</label><input><br/> 
+   3) Include class "submitbutton" to your button
+*/
+.cssform
+{
+    background: #e2f4fe;
+    border: 1px solid #d1d2d4;
+    padding: 10px;
+}
+
+.cssform hr
+{
+    margin-top: 10px;
+    margin-bottom: 13px;
+}
+
+.cssform label
+{
+	float: left;
+	width: 150px;
+	font-weight: bold;
+	color: #0f556a;
+}
+
+.cssform input, .cssform textarea, .cssform select
+{
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+
+.cssform blockquote
+{
+    vertical-align: middle;
+    margin-bottom: -15px;
+}
+
+.submitbutton
+{
+	margin-bottom: 10px;
+	width: 90px;
+}
+
+.cssform br
+{
+	clear: left;
+}
+
+.cssform fieldset
+{
+    border: 1px solid #d1d2d4;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.cssform fieldset legend
+{
+    color: #0f556a;
+}
+
+
+/***** New Request *****/
+
+.table_form
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.form_container
+{
+    width: 70%;
+}
+
+.form_header_div
+{
+    background: #d1d2d4;
+    width: 100%;
+    margin-top: 0px;
+}
+
+.form_header_div h1
+{
+    color: #0f556a;
+    font-size: 14px;
+    margin: 0px 8px;
+    margin-top: -4px;
+    margin-bottom: 2px;
+}
+
+.captcha img
+{
+    border: 1px solid #dae0e2;
+    background: #e2f4fd;
+    padding: 10px;
+}
+
+.form_text_box
+{
+    border: 1px solid #dae0e2;
+    background: #e2f4fd;
+    padding: 10px;
+}
+
+.form_text_box textarea
+{
+    width: 98%;
+    border: 1px solid #dae0e2;
+    padding: 5px;
+}
+
+/***** Group/Roles Form *****/
+
+.groupform
+{
+    background: #e2f4fe;
+    border: 1px solid #d1d2d4;
+    padding: 10px;
+}
+
+.groupform table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    
+}
+
+.groupform table tr td
+{
+    padding: 5px 10px;
+}
+
+.groupdesc
+{
+    font-weight: bold;
+    color: #0f556a;
+    width: 130px;
+    vertical-align: top;
+}
+
+.groupdesc label a:link, .groupdesc label a:visited, .groupdesc label a:active
+{
+    color: #0f556a;
+}
+
+.groupdesc label a:hover
+{
+    color: #28903a;
+}
+
+.groupform ul ul
+{
+    padding-left: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;    
+}
+
+.groupform ul li a:link, .groupform ul li a:visited, .groupform ul li a:active
+{
+    text-decoration: none;
+    color: #0f556a;
+}
+
+.groupform ul li a:hover
+{
+    text-decoration: none;
+    color: #28903a;
+}
+
+.with_dot ul
+{
+    list-style-type: disc;
+    padding-left: 15px;
+}
+    
+
+/* --------- /stylesheets/calendar_date_select/default.css --------- */ 
+.calendar_date_select {
+  color:white;
+  border:#777 1px solid;
+  display:block;
+  width:195px;
+  z-index: 1000;
+}
+/* this is a fun ie6 hack to get drop downs to stay behind the popup window.  This should always be just underneath .calendar_date_select */
+iframe.ie6_blocker {
+  position: absolute;
+  z-index: 999;
+}
+
+.calendar_date_select thead th {
+  font-weight:bold;
+  background-color: #aaa;
+  border-top:1px solid #777;
+  border-bottom:1px solid #777;
+  color: white !important;
+}
+
+.calendar_date_select .cds_buttons {
+  text-align:center;
+  padding:5px 0px;
+  background-color: #555;
+}
+
+.calendar_date_select .cds_footer {
+  background-color: black;
+  padding:3px;
+  font-size:12px;
+  text-align:center;
+}
+
+.calendar_date_select table {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.calendar_date_select .cds_header {
+  background-color: #ccc;
+  border-bottom: 2px solid #aaa;
+  text-align:center;
+}
+
+.calendar_date_select .cds_header span {
+  font-size:15px;
+  color: black;
+  font-weight: bold;
+}
+
+.calendar_date_select select { font-size:11px;}
+
+.calendar_date_select .cds_header a:hover {
+  color: white;
+}
+.calendar_date_select .cds_header a {
+  width:22px;
+  height:20px;
+  text-decoration: none;
+  font-size:14px;
+  color:black !important;
+}
+
+.calendar_date_select .cds_header a.prev {
+  float:left;
+}
+.calendar_date_select .cds_header a.next {
+  float:right;
+}
+
+.calendar_date_select .cds_header a.close {
+  float:right;
+  display:none;
+}
+
+.calendar_date_select .cds_header select.month {
+  width:90px;
+}
+
+.calendar_date_select .cds_header select.year {
+  width:61px;
+}
+.calendar_date_select .cds_buttons a {
+  color: white;
+  font-size: 9px;
+}
+
+.calendar_date_select td {
+  font-size:12px;
+  width: 24px;
+  height: 21px;
+  text-align:center;
+  vertical-align: middle;
+  background-color: #fff;
+}
+.calendar_date_select td.weekend {
+  background-color: #eee;
+  border-left:1px solid #ddd;
+  border-right:1px solid #ddd;
+}
+
+.calendar_date_select td div {
+  color: #000;
+}
+.calendar_date_select td div.other {
+  color: #ccc;
+}
+.calendar_date_select td.selected div {
+  color:white;
+}
+
+.calendar_date_select tbody td {
+  border-bottom: 1px solid #ddd;
+}
+.calendar_date_select td.selected {
+  background-color:#777;
+}
+
+.calendar_date_select td.hover {
+  background-color:#ccc;
+}
+
+.calendar_date_select td.today {
+  border: 1px dashed #999;
+}

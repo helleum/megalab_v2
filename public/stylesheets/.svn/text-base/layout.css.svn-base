@@ -1,0 +1,83 @@
+#contentwrapper
+{
+    float: left;
+    width: 100%;
+    display: table;
+}
+
+#contentcolumn
+{
+    margin-left: 215px; /*Set left margin to LeftColumnWidth*/
+	border-left: 1px solid #dedede;
+}
+
+#contentcolumn_login
+{
+    margin-left: 0px; /*Set left margin to LeftColumnWidth*/
+}
+
+#leftcolumn
+{
+    float: left;
+    width: 215px; /*Width of left column*/
+    margin-left: -100%;
+    border-right: 1px solid #dedede;
+	overflow: auto;
+	min-height: 470px;
+}
+
+.innertube
+{
+    margin: 0px; /*Margins for inner DIV inside each column (to provide padding)*/
+    margin-top: 0;
+}
+
+.innertube_login
+{
+    margin: 150px 0;
+    text-align: center;
+}
+
+.container
+{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+}
+
+.container_div
+{
+    background: #d1d2d4;
+    width: 100%;
+    margin-top: 0px;
+}
+
+.container_div h1
+{
+    color: #0f556a;
+    font-size: 16px;
+    margin: 2px 8px 10px 8px;
+}
+    
+
+.roundcont
+{
+    width: 100%;
+    background: #d1d2d4;
+    margin-bottom: -2px;
+}
+
+.roundtop
+{
+    background: url(/images/tr.gif) no-repeat top right;
+}
+
+img.corner 
+{
+    width: 10px;
+    height: 10px;
+    border: none;
+    display: block!important;
+}
+

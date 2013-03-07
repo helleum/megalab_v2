@@ -1,0 +1,40 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/enforce_schema_rules/lib
+svn://berkeley/ums
+
+
+
+2008-04-29T09:16:58.991163Z
+74
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+enforce_schema_rules.rb
+file
+
+
+
+
+2008-05-21T07:21:06.690461Z
+c17c170af7c31bd94429b96feb164b18
+2008-04-29T09:16:58.991163Z
+74
+isaac
+

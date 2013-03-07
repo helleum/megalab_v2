@@ -1,0 +1,32 @@
+<%= render :partial => '/shared/user_nav', 
+           :locals => { :title => 'Roles', 
+		   :name => nil, :action => nil } %>
+
+
+
+<div class="container">
+  <b>Below is a complete tree of all roles known to the system.</b><br /><br />
+    
+  <div class="roundcont">
+    <div class="roundtop">
+      <img src="/images/tl.gif" width="10" height="10" class="corner" style="display: none" />
+    </div>
+  </div>
+  
+  <div class="container_div">
+    <div class="button_div">
+      <%= style_link_to_buttons link_to('New Role', :action => 'new') %>
+    </div>
+    <h1>Role</h1>
+    <div class="groupform with_dot">    
+      <%= node_tree @roles do |role|
+        result = link_to role.title, edit_role_path(role) + " "
+        #result += "[" + role.users.length.to_s + "/" + role.all_users.length.to_s + " users, " 
+        #result += role.groups.length.to_s + "/" + role.all_groups.length.to_s + " groups]"
+        #result += "(" + link_to('S', role_path(role), :title => 'Show') + " "
+        result += " (" + icon_to(edit_img, edit_role_path(role)) + " "
+        result += icon_to(delete_img, role_path(role), :confirm => 'Are you sure?', :method => :delete) + ")"
+      end %>
+    </div>
+  </div>
+</div>

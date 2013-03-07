@@ -1,0 +1,79 @@
+8
+
+dir
+89
+svn://berkeley/ums/megalab/trunk/vendor/plugins/ar_fixtures/test
+svn://berkeley/ums
+
+
+
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2b7594e1-6b40-0410-98d9-fa60bdef7805
+
+test_helper.rb
+file
+
+
+
+
+2007-12-14T02:52:22.714410Z
+bb659f8c97bef504412de57b1cabd844
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+schema.rb
+file
+
+
+
+
+2007-12-14T02:52:22.714410Z
+1a00fa157baf09b87672308e750b7553
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+database.yml
+file
+
+
+
+
+2007-12-14T02:52:22.730041Z
+1f35a3c9ce2fed5e185b92a39b603b23
+2007-12-04T01:34:54.954671Z
+1
+isaac
+
+fixtures
+dir
+
+ar_fixtures_test.rb
+file
+
+
+
+
+2007-12-14T02:52:22.730041Z
+8b9871e06c9c97f7c1124be1113d5429
+2007-12-04T01:34:54.954671Z
+1
+isaac
+

@@ -1,0 +1,6 @@
+<!--[form:permission]-->
+
+<label for="permission_title">Controller Name</label><%= text_field 'permission', 'controller_name' %><br/>
+<label for="permission_title">Action Name</label><%= text_field 'permission', 'action_name' %><br/>
+
+<!--[eoform:permission]-->
